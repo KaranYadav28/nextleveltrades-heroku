@@ -187,6 +187,10 @@ class DashboardForm(FlaskForm):
     submit = SubmitField('Save Configuration')
 
 
+
+
+
+
 # Function to generate and send OTP email
 def send_otp_email(user):
     totp = pyotp.TOTP(user.otp_secret)
@@ -493,26 +497,50 @@ def reset_token(token):
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form, token=token)
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    # Fetch the user's trading bot configuration
+    form = DashboardForm()
+
+    if form.validate_on_submit():
+        try:
+            # Fetch existing config or create a new one
+            config = TradingBotConfig.query.filter_by(user_id=current_user.id).first()
+            if not config:
+                config = TradingBotConfig(user_id=current_user.id)
+
+            # Update config with form data
+            config.api_key = form.api_key.data
+            config.secret = form.secret.data
+            config.asset_name = form.asset_name.data
+            config.trade_size_usdt = form.trade_size_usdt.data
+            config.indicator = form.indicator.data
+            config.exchange = form.exchange.data
+
+            # Save to the database
+            db.session.add(config)
+            db.session.commit()
+
+            flash('Configuration saved successfully!', 'success')
+
+        except Exception as e:
+            flash(f'An error occurred while saving configuration: {str(e)}', 'danger')
+
+        return redirect(url_for('dashboard'))
+
+    # Fetch existing configuration for display
     config = TradingBotConfig.query.filter_by(user_id=current_user.id).first()
 
-    # Determine the user's bot status
+    # Check the bot's status (running or stopped)
     user_bot_status = 'running' if current_user.id in active_bots else 'stopped'
 
-    # Render the dashboard with the necessary context
     return render_template(
         'dashboard.html',
         config=config,
-        bot_status=bot_status,
-        user_bot_status=user_bot_status  # Pass this to the template
+        form=form,
+        user_bot_status=user_bot_status
     )
 
-
-
-# app.py (start_bot route)
 @app.route('/start_bot', methods=['POST'])
 @login_required
 def start_bot():
@@ -552,35 +580,29 @@ def start_bot():
         flash('Trading bot started successfully!', 'success')
 
     except ccxt.NetworkError as e:
-        error_message = f"Network error: {str(e)}"
-        logging.error(error_message)
+        logging.error(f"Network error: {str(e)}")
         flash('Network error. Check your internet connection.', 'danger')
 
     except ccxt.ExchangeError as e:
         if "Invalid symbol" in str(e):
-            error_message = "Invalid asset name provided. Please check your asset configuration."
-            logging.error(error_message)
-            flash(error_message, 'danger')
+            logging.error(f"Invalid asset name provided: {str(e)}")
+            flash("Invalid asset name provided. Please check your asset configuration.", 'danger')
         elif "Incorrect apiKey" in str(e):
-            error_message = "Incorrect API key provided. Please check your API key and try again."
-            logging.error(error_message)
-            flash(error_message, 'danger')
+            logging.error(f"Incorrect API key provided: {str(e)}")
+            flash("Incorrect API key provided. Please check your API key and try again.", 'danger')
         else:
-            error_message = f"Exchange error: {str(e)}"
-            logging.error(error_message)
-            flash(f'Exchange error: {error_message}', 'danger')
+            logging.error(f"Exchange error: {str(e)}")
+            flash(f'Exchange error: {str(e)}', 'danger')
 
     except ValueError as e:
         logging.error(f"Validation error: {str(e)}")
         flash(f'Error: {str(e)}', 'danger')
 
     except Exception as e:
-        error_message = f"Unexpected error: {str(e)}"
-        logging.error(error_message)
+        logging.error(f"Unexpected error: {str(e)}")
         flash(f'An unexpected error occurred: {str(e)}', 'danger')
 
     return redirect(url_for('dashboard'))
-
 
 @app.route('/stop_bot', methods=['POST'])
 @login_required
@@ -635,6 +657,10 @@ def policy():
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 if __name__ == '__main__':
