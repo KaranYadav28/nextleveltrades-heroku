@@ -1,9 +1,1 @@
-client_id='606914266477-kogstbs60m7cnvplpa48hvr88tttm2m9.apps.googleusercontent.com'
-client_secret='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'
-app_password='sfkq joax uxim dhtf'
-paypal client:-'AcbUdQRkoH7mirxcx4t0GqcypsXdOV7f6dFTvJuvieXZ9MK4oxgU7KQIVy_vi9RKvEKMNiYbv5vseO3h'
-paypal secret:-'EJLkps-7n8EfanMne4lQH-SNviCRSvinZ0XpX6PWxEdU8kPVHrMjnWEAW-x1zp5anXOJpOQoBAWceL7m'
-payu client:- '2462263afa235ed1db97f1ecc970b3663b683e80f28977c6f059d6961adde1f6'
-payu secret:- '5b3eeef2bde032e0447f1f69eaa44e805fdabf999b10b578d48a80013c191c16'
-api:-'aYEtQLO511DTwuTbUmTEllYGqZSfJjxkzh7r3Zz3yrBMtjPUK73FVmvKKqZoAJSfARdx6bWgoHic4H7X1kbtVw'
-secret:-'qWd5tr3oX5M78seEeAgjPf0sAwqcpzMErxcmKp1lcAHwJQUDP8QYRaVjwSZgSM7slao4vakoVleeZhAVZbg'
+
