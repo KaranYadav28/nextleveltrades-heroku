@@ -511,7 +511,6 @@ body {
     font-size: 14px;
     color: #bdbdbd;
 }
-/* Responsive styles for screens smaller than 1200px */
 @media screen and (max-width: 1200px) {
     .welcome-left h1 {
         font-size: 80px;
@@ -528,7 +527,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 1100px */
 @media screen and (max-width: 1100px) {
     .welcome-left h1 {
         font-size: 75px;
@@ -539,7 +537,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 1000px */
 @media screen and (max-width: 1000px) {
     .navbar-menu a {
         font-size: 18px;
@@ -560,7 +557,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 900px */
 @media screen and (max-width: 900px) {
     .welcome-left {
         margin-left: 50px;
@@ -582,7 +578,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 800px */
 @media screen and (max-width: 800px) {
     .navbar-logo img {
         height: 60px;
@@ -606,7 +601,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 700px */
 @media screen and (max-width: 700px) {
     .navbar-logo {
         display: none;
@@ -636,7 +630,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 600px */
 @media screen and (max-width: 600px) {
     .navbar-menu {
         gap: 10px;
@@ -649,14 +642,13 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 500px */
 @media screen and (max-width: 500px) {
     .navbar {
         padding: 10px 20px;
     }
     .navbar-menu a {
-        font-size: 14px; /* Increased font size */
-        padding: 10px 15px; /* Add padding for larger clickable area */
+        font-size: 14px;
+        padding: 10px 15px;
         gap: 8px;
     }
     .welcome-left h1 {
@@ -669,20 +661,19 @@ body {
         height: 50vh;
     }
     .wwelcome-button, .login-button {
-        font-size: 18px; /* Increased button font size */
-        padding: 8px 12px; /* Larger padding for buttons */
+        font-size: 14px; /* Adjust button font size */
+        padding: 6px 8px; /* Adjust button padding */
     }
 }
 
-/* Responsive styles for screens smaller than 400px */
 @media screen and (max-width: 400px) {
     .navbar {
         padding: 5px 10px;
         height: 45px;
     }
     .navbar-menu a {
-        font-size: 16px; /* Increased font size */
-        padding: 10px 15px; /* Add padding for larger clickable area */
+        font-size: 14px;
+        padding: 8px 10px;
     }
     .welcome-left h1 {
         font-size: 35px;
@@ -691,20 +682,19 @@ body {
         font-size: 12px;
     }
     .wwelcome-button, .login-button {
-        font-size: 16px; /* Slightly larger font size */
-        padding: 6px 10px; /* Adjust padding */
+        font-size: 12px; /* Smaller button font size */
+        padding: 4px 6px; /* Smaller button padding */
     }
 }
 
-/* Responsive styles for screens smaller than 300px */
 @media screen and (max-width: 300px) {
     .navbar {
         padding: 2px 5px;
         height: 40px;
     }
     .navbar-menu a {
-        font-size: 14px; /* Adjust font size */
-        padding: 8px 10px; /* Add padding */
+        font-size: 12px; /* Adjust font size */
+        padding: 6px 8px; /* Add padding */
     }
     .welcome-left h1 {
         font-size: 30px;
@@ -713,14 +703,11 @@ body {
         font-size: 12px;
     }
     .wwelcome-button, .login-button {
-        font-size: 14px;
-        padding: 5px 8px; /* Increase button padding */
+        font-size: 10px; /* Smaller button font size */
+        padding: 4px 6px; /* Smaller button padding */
     }
 }
 
-/* About Us Section: Side-by-side layout for image and text */
-
-/* For screens smaller than 1000px */
 @media screen and (max-width: 1000px) {
     .Second-page {
         display: flex;
@@ -739,7 +726,6 @@ body {
     }
 }
 
-/* For screens smaller than 800px */
 @media screen and (max-width: 800px) {
     .Second-page {
         flex-direction: column;
@@ -757,7 +743,6 @@ body {
     }
 }
 
-/* For screens smaller than 600px */
 @media screen and (max-width: 600px) {
     .second-right h1 {
         font-size: 30px;
@@ -770,7 +755,6 @@ body {
     }
 }
 
-/* For screens smaller than 500px */
 @media screen and (max-width: 500px) {
     .second-right h1 {
         font-size: 28px;
@@ -782,9 +766,7 @@ body {
         width: 100%;
     }
 }
-/* Signup button responsive styles */
 
-/* Responsive styles for screens smaller than 800px */
 @media screen and (max-width: 800px) {
     .navbar-signup {
         padding: 7px 18px;
@@ -792,7 +774,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 700px */
 @media screen and (max-width: 700px) {
     .navbar-signup {
         padding: 6px 16px;
@@ -800,7 +781,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 600px */
 @media screen and (max-width: 600px) {
     .navbar-signup {
         padding: 5px 14px;
@@ -808,7 +788,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 500px */
 @media screen and (max-width: 500px) {
     .navbar-signup {
         padding: 4px 12px;
@@ -816,7 +795,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 400px */
 @media screen and (max-width: 400px) {
     .navbar-signup {
         padding: 3px 10px;
@@ -824,7 +802,6 @@ body {
     }
 }
 
-/* Responsive styles for screens smaller than 300px */
 @media screen and (max-width: 300px) {
     .navbar-signup {
         padding: 2px 8px;
