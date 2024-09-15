@@ -635,10 +635,10 @@ body {
         gap: 10px;
     }
     .welcome-left h1 {
-        font-size: 45px;
+        font-size: 48px; /* Slightly larger */
     }
     .welcome p {
-        font-size: 14px;
+        font-size: 16px; /* Slightly larger */
     }
 }
 
@@ -652,17 +652,17 @@ body {
         gap: 8px;
     }
     .welcome-left h1 {
-        font-size: 40px;
+        font-size: 42px; /* Slightly larger */
     }
     .welcome p {
-        font-size: 14px;
+        font-size: 15px; /* Slightly larger */
     }
     .welcome {
         height: 50vh;
     }
     .wwelcome-button, .login-button {
-        font-size: 14px; /* Adjust button font size */
-        padding: 6px 8px; /* Adjust button padding */
+        font-size: 14px; /* Slightly larger */
+        padding: 8px 12px; /* Slightly larger */
     }
 }
 
@@ -676,14 +676,14 @@ body {
         padding: 8px 10px;
     }
     .welcome-left h1 {
-        font-size: 35px;
+        font-size: 36px; /* Slightly larger */
     }
     .welcome p {
-        font-size: 12px;
+        font-size: 14px; /* Slightly larger */
     }
     .wwelcome-button, .login-button {
-        font-size: 12px; /* Smaller button font size */
-        padding: 4px 6px; /* Smaller button padding */
+        font-size: 12px;
+        padding: 6px 10px; /* Slightly larger */
     }
 }
 
@@ -693,18 +693,18 @@ body {
         height: 40px;
     }
     .navbar-menu a {
-        font-size: 12px; /* Adjust font size */
-        padding: 6px 8px; /* Add padding */
+        font-size: 12px;
+        padding: 6px 8px;
     }
     .welcome-left h1 {
-        font-size: 30px;
+        font-size: 32px; /* Slightly larger */
     }
     .welcome p {
-        font-size: 12px;
+        font-size: 13px; /* Slightly larger */
     }
     .wwelcome-button, .login-button {
-        font-size: 10px; /* Smaller button font size */
-        padding: 4px 6px; /* Smaller button padding */
+        font-size: 11px;
+        padding: 5px 8px; /* Slightly larger */
     }
 }
 
@@ -769,42 +769,43 @@ body {
 
 @media screen and (max-width: 800px) {
     .navbar-signup {
-        padding: 5px 12px;
+        padding: 7px 18px;
         font-size: 14px;
     }
 }
 
 @media screen and (max-width: 700px) {
     .navbar-signup {
-        padding: 4px 10px;
-        font-size: 12px;
+        padding: 6px 16px;
+        font-size: 13px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .navbar-signup {
-        padding: 3px 8px;
-        font-size: 10px;
+        padding: 5px 14px;
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .navbar-signup {
-        padding: 2px 6px;
-        font-size: 9px;
+        padding: 5px 14px; /* Increase width */
+        font-size: 11px; /* Smaller font size */
     }
 }
 
 @media screen and (max-width: 400px) {
     .navbar-signup {
-        padding: 1px 4px;
-        font-size: 8px;
+        padding: 4px 12px; /* Increase width */
+        font-size: 10px; /* Smaller font size */
     }
 }
 
 @media screen and (max-width: 300px) {
     .navbar-signup {
-        padding: 1px 2px;
-        font-size: 7px;
+        padding: 3px 10px; /* Increase width */
+        font-size: 9px; /* Smaller font size */
     }
 }
+
