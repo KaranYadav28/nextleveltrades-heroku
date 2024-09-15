@@ -769,42 +769,42 @@ body {
 
 @media screen and (max-width: 800px) {
     .navbar-signup {
-        padding: 7px 45px;
+        padding: 10px 20px;
         font-size: 14px;
-        width: 20px;
     }
 }
 
 @media screen and (max-width: 700px) {
     .navbar-signup {
-        padding: 6px 40px;
+        padding: 9px 18px;
+        font-size: 13px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .navbar-signup {
-        padding: 5px 35px;
+        padding: 8px 16px;
         font-size: 12px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .navbar-signup {
-        padding: 5px 30px; /* Increase width */
+        padding: 8px 16px; /* Larger width */
         font-size: 11px; /* Smaller font size */
     }
 }
 
 @media screen and (max-width: 400px) {
     .navbar-signup {
-        padding: 4px 25px; /* Increase width */
+        padding: 7px 14px; /* Larger width */
         font-size: 10px; /* Smaller font size */
     }
 }
 
 @media screen and (max-width: 300px) {
     .navbar-signup {
-        padding: 3px 20px; /* Increase width */
+        padding: 6px 12px; /* Larger width */
         font-size: 9px; /* Smaller font size */
     }
 }
