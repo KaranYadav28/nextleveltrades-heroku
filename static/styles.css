@@ -771,40 +771,40 @@ body {
     .navbar-signup {
         padding: 7px 18px;
         font-size: 14px;
+        width: 20px;
     }
 }
 
 @media screen and (max-width: 700px) {
     .navbar-signup {
-        padding: 6px 16px;
-        font-size: 13px;
+        padding: 6px 30px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .navbar-signup {
-        padding: 5px 14px;
+        padding: 5px 25px;
         font-size: 12px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .navbar-signup {
-        padding: 5px 14px; /* Increase width */
+        padding: 5px 20px; /* Increase width */
         font-size: 11px; /* Smaller font size */
     }
 }
 
 @media screen and (max-width: 400px) {
     .navbar-signup {
-        padding: 4px 12px; /* Increase width */
+        padding: 4px 15px; /* Increase width */
         font-size: 10px; /* Smaller font size */
     }
 }
 
 @media screen and (max-width: 300px) {
     .navbar-signup {
-        padding: 3px 10px; /* Increase width */
+        padding: 3px 13px; /* Increase width */
         font-size: 9px; /* Smaller font size */
     }
 }
