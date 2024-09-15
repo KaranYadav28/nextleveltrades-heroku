@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .pricing-container {
+            padding: 50px;
+            text-align: center;
+            background-color: #1F0930;
+            color: white;
+        }
+        .navbar-logo img{
+            font-size: 200px;
+            font-weight: bold;
+            margin-left: 15px;
+            height: 100px;
+        }
+
+        .pricing-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .pricing-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-option {
+            background-color: white;
+            color: #1F0930;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-option:hover {
+            transform: scale(1.05);
+        }
+
+        .pricing-option h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .pricing-option .price {
+            font-size: 2.5rem;
+            color: #1F0930;
+            margin-bottom: 20px;
+        }
+
+        .pricing-option ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .pricing-option ul li {
+            margin: 10px 0;
+        }
+
+        .pricing-option form {
+            margin-top: 1rem;
+        }
+
+        .pricing-option button {
+            background-color: #A31C9D;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pricing-option button:hover {
+            background-color: #850174;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .pricing-container {
+                padding: 30px;
+            }
+
+            .pricing-container h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-options {
+                gap: 20px;
+            }
+
+            .pricing-option {
+                padding: 20px;
+            }
+
+            .pricing-option h2 {
+                font-size: 1.8rem;
+            }
+
+            .pricing-option .price {
+                font-size: 2rem;
+            }
+
+            .pricing-option ul {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                padding: 20px;
+            }
+
+            .pricing-container h1 {
+                font-size: 1.8rem;
+            }
+
+            .pricing-options {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .pricing-option {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .pricing-option h2 {
+                font-size: 1.6rem;
+            }
+
+            .pricing-option .price {
+                font-size: 1.8rem;
+            }
+
+            .pricing-option ul {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-container {
+                padding: 15px;
+            }
+
+            .pricing-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .pricing-option {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .pricing-option h2 {
+                font-size: 1.4rem;
+            }
+
+            .pricing-option .price {
+                font-size: 1.5rem;
+            }
+
+            .pricing-option ul {
+                font-size: 0.9rem;
+            }
+
+            .pricing-option button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="/"><img src="{{ url_for('static', filename='download.png') }}" alt="Logo"></a>
+        </div>
+        <div class="navbar-menu">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('home') }}">About</a>
+            <a href="{{ url_for('home') }}">Contact</a>
+            {% if current_user.is_authenticated %}
+                {% if current_user.subscription_active %}
+                    <a href="{{ url_for('dashboard') }}" style="color: purple;">Dashboard</a>
+                {% endif %}
+            {% else %}
+                <a href="{{ url_for('register') }}">Get Started</a>
+            {% endif %}
+        </div>
+        {% if current_user.is_authenticated %}
+            <button class="navbar-signup">
+                <a href="{{ url_for('logout') }}" style="color: white; text-decoration: none;">Logout</a>
+            </button>
+        {% else %}
+            <a href="{{ url_for('register') }}"><button class="navbar-signup">Sign Up</button></a>
+        {% endif %}
+    </nav>
+    <div class="pricing-container">
+        <h1>Select Your Plan</h1>
+        <div class="pricing-options">
+            <div class="pricing-option">
+                <h2>1 Month</h2>
+                <div class="price">$9.00 USD</div>
+                <ul>
+                    <li>Beginner Plan</li>
+                    <li>1 Month</li>
+                    <li>7 Exchanges</li>
+                    <li>Unlimited Support</li>
+                </ul>
+                <form action="{{ url_for('payu_payment', plan='1_month') }}" method="post">
+                    <button type="submit">Select Plan</button>
+                </form>
+            </div>
+            <div class="pricing-option">
+                <h2>3 Months</h2>
+                <div class="price">$24.99 USD</div>
+                <ul>
+                    <li>Intermediate</li>
+                    <li>3 Months</li>
+                    <li>7 Exchanges</li>
+                    <li>Unlimited Support</li>
+                </ul>
+                <form action="{{ url_for('payu_payment', plan='3_months') }}" method="post">
+                    <button type="submit">Select Plan</button>
+                </form>
+            </div>
+            <div class="pricing-option">
+                <h2>6 Months</h2>
+                <div class="price">$49.99 USD</div>
+                <ul>
+                    <li>Expert Plan</li>
+                    <li>6 Months</li>
+                    <li>7 exchanges</li>
+                    <li>Unlimited Support</li>
+                </ul>
+                <form action="{{ url_for('payu_payment', plan='6_months') }}" method="post">
+                    <button type="submit">Select Plan</button>
+                </form>
+            </div>
+            <div class="pricing-option">
+                <h2>1 Year</h2>
+                <div class="price">$84.99 USD</div>
+                <ul>
+                    <li>Premium Plan</li>
+                    <li>365 days</li>
+                    <li>7 exchanges</li>
+                    <li>Premium Support</li>
+                </ul>
+                <form action="{{ url_for('payu_payment', plan='1_year') }}" method="post">
+                    <button type="submit">Select Plan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

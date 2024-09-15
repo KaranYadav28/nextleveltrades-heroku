@@ -1,0 +1,249 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NextLevelTrades</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background: linear-gradient(45deg, #471174 ,#180527, #2b103f, #0c0625, #0a051b);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 100px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+        }
+
+        .container {
+            margin-top: 200px;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
+            text-align: center;
+        }
+
+        .form-container {
+            width: 100%;
+        }
+
+        .form-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-container form div {
+            margin-bottom: 15px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .form-container textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form-container button {
+            background-color: #ff00d9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .form-container button:hover {
+            background-color: #008ecc;
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-danger {
+            background-color: red;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: green;
+            color: white;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-logo img {
+                height: 80px;
+            }
+
+            .navbar-menu a {
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+
+            .form-container h1 {
+                font-size: 34px;
+            }
+
+            .form-container input, .form-container select, .form-container textarea {
+                font-size: 16px;
+            }
+
+            .form-container label {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="/"><img src="{{ url_for('static', filename='download.png') }}" alt="Logo"></a>
+        </div>
+        <div class="navbar-menu">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('home') }}">About</a>
+            <a href="{{ url_for('home') }}">Contact</a>
+            
+            {% if current_user.is_authenticated %}
+                {% if current_user.subscription_active %}
+                    <a href="{{ url_for('dashboard') }}" style="color: rgb(213, 8, 200);">Dashboard</a>
+                {% endif %}
+            {% else %}
+                <a href="{{ url_for('register') }}">Get Started</a>
+            {% endif %}
+        </div>
+
+        {% if current_user.is_authenticated %}
+            <button class="navbar-signup">
+                <a href="{{ url_for('logout') }}" style="color: white; text-decoration: none;">Logout</a>
+            </button>
+        {% else %}
+            <a href="{{ url_for('register') }}"><button class="navbar-signup">Sign Up</button></a>
+        {% endif %}
+    </nav>
+
+    <div class="container">
+        <!-- Flash Messages Section -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div class="alert-container">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% if config %}
+            <h1>Welcome back, {{ current_user.username }}</h1>
+            <div>
+                <h2>Portfolio</h2>
+                <p>Asset: {{ config.asset_name }}</p>
+                <p>Trade Size: {{ config.trade_size_usdt }} USDT</p>
+                <p>Indicator: {{ config.indicator }}</p>
+                <p>Exchange: {{ config.exchange }}</p>
+            </div>
+            <div class="form-container">
+                <!-- Conditionally render Start/Stop Bot button -->
+                {% if user_bot_status == 'running' %}
+                    <form method="POST" action="{{ url_for('stop_bot') }}">
+                        <button type="submit" class="btn btn-danger">Stop Bot</button>
+                    </form>
+                {% else %}
+                    <form method="POST" action="{{ url_for('start_bot') }}">
+                        <button type="submit" class="btn btn-success">Start Bot</button>
+                    </form>
+                {% endif %}
+                <!-- Debugging user_bot_status (remove after debugging) -->
+                <p>Current bot status: {{ user_bot_status }}</p>
+
+                <!-- Edit Configuration Button that redirects to Edit Config page -->
+                <form method="GET" action="{{ url_for('edit_config') }}">
+                    <button type="submit">Edit Configuration</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="form-container">
+                <h1>Configure Trading Bot</h1>
+                <form method="POST" action="{{ url_for('dashboard') }}">
+                    {{ form.hidden_tag() }}
+                    <div>
+                        {{ form.api_key.label }} {{ form.api_key() }}
+                    </div>
+                    <div>
+                        {{ form.secret.label }} {{ form.secret() }}
+                    </div>
+                    <div>
+                        {{ form.asset_name.label }} {{ form.asset_name() }}
+                    </div>
+                    <div>
+                        {{ form.trade_size_usdt.label }} {{ form.trade_size_usdt() }}
+                    </div>
+                    <div>
+                        {{ form.indicator.label }} {{ form.indicator() }}
+                    </div>
+                    <div>
+                        {{ form.exchange.label }} {{ form.exchange() }}
+                    </div>
+                    <div>
+                        <button type="submit">Save Configuration</button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

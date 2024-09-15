@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextLevelTrades</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <section class="first-page">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="/"><img src="{{ url_for('static', filename='download.png') }}" alt="Logo" style="height: 80px;"></a>
+            </div>
+            <div class="navbar-menu">
+                <a href="#" style="color: #ff009d;">Home</a>
+                <a href="#About">About</a>
+                <a href="#">Contact</a>
+                
+                <!-- Conditionally display buttons based on user status -->
+                {% if current_user.is_authenticated %}
+                    {% if current_user.subscription_active %}
+                        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('register') }}">Get Started</a>
+                {% endif %}
+            </div>
+
+            <!-- Conditionally display profile button or sign-up button -->
+            {% if current_user.is_authenticated %}
+                <button class="navbar-signup">
+                    <a href="{{ url_for('logout') }}" style="color: white; text-decoration: none;">Logout</a>
+                </button>
+            {% else %}
+                <a href="{{ url_for('register') }}"><button class="navbar-signup">Sign Up</button></a>
+            {% endif %}
+        </nav>
+
+        <section class="welcome">
+            <div class="welcome-left" style="margin-left: 60px; margin-top: 10px;">
+                <h1>Elevate your <span class="gradient-text">Profits</span> with <span class="gradient-text">NextLevelTrades</span></h1>
+                <p>Welcome to NextLevelTrades, your gateway to smarter, automated trading for optimized profits and financial freedom</p>
+                
+                <!-- Conditionally display buttons based on user status -->
+                {% if current_user.is_authenticated %}
+                    {% if current_user.subscription_active %}
+                        <a href="{{ url_for('dashboard') }}"><button class="wwelcome-button">Dashboard</button></a>
+                    {% else %}
+                        <a href="{{ url_for('pricing') }}"><button class="wwelcome-button">View Plans</button></a>
+                    {% endif %}
+                {% else %}
+                    <a href="{{ url_for('register') }}"><button class="wwelcome-button">Get started</button></a>
+                {% endif %}
+                
+                <!-- Conditionally display the Login button -->
+                {% if not current_user.is_authenticated %}
+                    <a href="{{ url_for('login') }}"><button class="login-button" style="margin-left: 10px;">Login</button></a>
+                {% endif %}
+            </div>
+            <div class="welcome-right">
+                <img src="{{ url_for('static', filename='img16.png') }}" alt="Welcome Image" style="margin-left: 250px;">
+            </div>
+        </section>
+    </section>
+    
+    <section class="Second-page" id="About">
+        <div class="second-left">
+            <img src="{{ url_for('static', filename='img17-hd.png') }}" alt="" width="800px" height="500px">
+        </div>
+        <div class="second-right">
+            <button>About Us</button>
+            <h1 style="margin-left: 20px;"><strong>Why Choose NextLevelTrades?</strong></h1>
+            <ul>
+                <p><strong>Top Indicators:</strong> We use the most reliable indicators, like moving averages and RSI, to make informed trades.</p>
+                <p><strong>Automated & Accurate:</strong> Our bot executes trades instantly, reducing emotional decisions and increasing accuracy.</p>
+                <p><strong>24/7 Trading:</strong> Trade around the clock with real-time analysis and secure transactions.</p>
+            </ul>
+            <a href="{{ url_for('pricing') }}"><button id="Viewplans">View Plans</button></a>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-card">
+                <h3>What is NextLevelTrades?</h3>
+                <p>NextLevelTrades is an automated trading platform designed to maximize profits with cutting-edge technology.</p>
+            </div>
+            <div class="faq-card">
+                <h3>How does automated trading work?</h3>
+                <p>Our algorithms analyze market data in real-time to execute trades on your behalf, minimizing risk and maximizing profit.</p>
+            </div>
+            <div class="faq-card">
+                <h3>What indicators are used?</h3>
+                <p>We use reliable indicators such as moving averages, RSI, and more to make informed trading decisions.</p>
+            </div>
+            <div class="faq-card">
+                <h3>Is my data secure?</h3>
+                <p>Yes, we use advanced encryption and security protocols to ensure your data and transactions are fully protected.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="get-in-touch">
+        <h2>Let's get in touch today!</h2>
+        <p>Any issue, Let us know.</p>
+        <div class="contact-form">
+            <input type="text" placeholder="Full name">
+            <input type="email" placeholder="Email address">
+            <textarea placeholder="Type Your Message"></textarea>
+            <button type="submit">Send Message</button>
+            <p>or send message on nextlevelstrades@gmail.com</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>Roadmap</h3>
+                <ul>
+                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div> 
+                <h3>Policy</h3>
+                <ul>
+                    <li><a href="{{ url_for('policy') }}">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Utility Pages</h3>
+                <ul>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">404 Not Found</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 NextLevelTrades. All rights reserved.</p>
+    </footer>
+</body>
+</html>
