@@ -63,10 +63,20 @@ PAYU_URL = "https://test.payu.in/_payment"  # Use https://secure.payu.in/_paymen
 
 # Set up logging for debugging
 logging.basicConfig(level=logging.DEBUG)
+# Session management
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
+app.config['SESSION_PERMANENT'] = True
+
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    user = User.query.get(int(user_id))
+    if user:
+        if user.subscription_end and user.subscription_end <= datetime.utcnow():
+            user.subscription_active = False
+            db.session.commit()  # Update subscription status
+    return user
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -662,6 +672,3 @@ def home():
 if __name__ == '__main__':
     app.run(debug=True)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
