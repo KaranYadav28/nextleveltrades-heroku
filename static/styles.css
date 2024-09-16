@@ -534,8 +534,6 @@ body {
     font-family: Georgia, serif;
 }
 
-/* Responsive layout adjustments */
-
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
     .welcome-left h1 {
@@ -588,7 +586,7 @@ body {
         flex-direction: row;
         height: auto;
         align-items: center;
-        width: 100%;  /* Ensure full width */
+        width: 100%;
     }
     .second-left, .second-right {
         max-width: 50%;
@@ -648,7 +646,7 @@ body {
     .Second-page {
         flex-direction: column;
         text-align: center;
-        width: 100%;  /* Ensure full width */
+        width: 100%;
     }
     .second-left, .second-right {
         max-width: 100%;
