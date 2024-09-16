@@ -513,6 +513,8 @@ body {
 }
 /* Full Responsiveness Code */
 
+/* Full Responsiveness Code */
+
 /* Resetting margin and padding for all elements */
 * {
     margin: 0;
@@ -534,6 +536,8 @@ body {
     font-family: Georgia, serif;
 }
 
+/* Responsive layout adjustments */
+
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
     .welcome-left h1 {
@@ -544,8 +548,6 @@ body {
     }
     .welcome {
         height: 80vh;
-        text-align: center;
-        padding-left: 5%; /* Slightly left from center */
     }
     .welcome-right img {
         width: 400px;
@@ -588,8 +590,7 @@ body {
         flex-direction: row;
         height: auto;
         align-items: center;
-        width: 100%;
-        padding-top: 40px; /* More space between sections */
+        width: 100%;  /* Ensure full width */
     }
     .second-left, .second-right {
         max-width: 50%;
@@ -600,7 +601,6 @@ body {
     }
     .second-right {
         margin-left: 20px;
-        padding-bottom: 40px; /* Ensure more space at the bottom */
     }
 }
 
@@ -622,7 +622,6 @@ body {
     }
     .welcome {
         height: 65vh;
-        padding-left: 5%; /* Keep slight left alignment */
     }
 }
 
@@ -647,14 +646,11 @@ body {
     }
     .welcome {
         height: 60vh;
-        padding-left: 5%; /* Slight left alignment */
     }
     .Second-page {
         flex-direction: column;
         text-align: center;
-        width: 100%;
-        padding-top: 40px; /* Increase space */
-        padding-bottom: 40px; /* More bottom space */
+        width: 100%;  /* Ensure full width */
     }
     .second-left, .second-right {
         max-width: 100%;
@@ -665,7 +661,6 @@ body {
     }
     .second-right {
         margin-top: 20px;
-        padding-bottom: 40px; /* Ensure more space at the bottom */
     }
     .navbar-signup {
         padding: 7px 18px;
@@ -697,14 +692,12 @@ body {
     }
     .navbar {
         justify-content: center;
-        margin-right: 10px; /* Shift navbar slightly to the right */
     }
     .welcome {
         height: 55vh;
-        padding-left: 5%; /* Slight left alignment */
     }
     .navbar-signup {
-        padding: 6px 16px; /* Reduce height, adjust width */
+        padding: 6px 16px;
         font-size: 13px;
     }
 }
@@ -734,10 +727,6 @@ body {
         width: 100%;
         height: auto;
     }
-    .Second-page {
-        padding-top: 40px; /* More top space */
-        padding-bottom: 40px; /* More bottom space */
-    }
 }
 
 /* For screens up to 500px */
@@ -751,7 +740,7 @@ body {
         gap: 8px;
     }
     .navbar-signup {
-        padding: 5px 14px; /* Decrease height */
+        padding: 5px 14px;
         font-size: 11px;
     }
     .welcome-left h1 {
@@ -762,7 +751,6 @@ body {
     }
     .welcome {
         height: 50vh;
-        padding-left: 5%; /* Slight left alignment */
     }
     .second-right h1 {
         font-size: 28px;
@@ -794,7 +782,6 @@ body {
     }
     .welcome {
         height: 45vh;
-        padding-left: 5%; /* Slight left alignment */
     }
 }
 
@@ -818,6 +805,11 @@ body {
     .welcome p {
         font-size: 13px;
     }
+    .welcome {
+        height: 40vh;
+    }
+}
+
     .welcome {
         height: 40vh;
         padding-left: 5%; /* Slight left alignment */
