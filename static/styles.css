@@ -513,7 +513,15 @@ body {
 }
 /* Responsive Styles */
 
+/* Responsive Styles */
+
 /* Mobile-first approach */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @media (max-width: 1200px) {
     .welcome-left h1 {
         font-size: 80px;
@@ -526,6 +534,7 @@ body {
     }
     .welcome-right img {
         width: 400px;
+        height: auto;
     }
 }
 
@@ -535,6 +544,7 @@ body {
     }
     .welcome-right img {
         width: 350px;
+        height: auto;
     }
 }
 
@@ -551,6 +561,7 @@ body {
     }
     .welcome-right img {
         width: 320px;
+        height: auto;
     }
     .welcome {
         height: 70vh;
