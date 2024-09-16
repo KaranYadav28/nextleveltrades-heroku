@@ -511,13 +511,30 @@ body {
     font-size: 14px;
     color: #bdbdbd;
 }
-/* Responsive Styles */
-
-/* Responsive Styles */
-
 /* Full Responsiveness Code */
 
-/* Mobile-first approach */
+/* Resetting margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll by hiding overflow */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure containers take full width */
+body {
+    background: linear-gradient(45deg, #471174, #180527, #2b103f, #0c0625, #0a051b);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease-in-out infinite;
+    font-family: Georgia, serif;
+}
+
+/* Responsive layout adjustments */
 
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
@@ -571,6 +588,7 @@ body {
         flex-direction: row;
         height: auto;
         align-items: center;
+        width: 100%;  /* Ensure full width */
     }
     .second-left, .second-right {
         max-width: 50%;
@@ -630,6 +648,7 @@ body {
     .Second-page {
         flex-direction: column;
         text-align: center;
+        width: 100%;  /* Ensure full width */
     }
     .second-left, .second-right {
         max-width: 100%;
