@@ -511,7 +511,10 @@ body {
     font-size: 14px;
     color: #bdbdbd;
 }
-@media screen and (max-width: 1200px) {
+/* Responsive Styles */
+
+/* Mobile-first approach */
+@media (max-width: 1200px) {
     .welcome-left h1 {
         font-size: 80px;
     }
@@ -522,22 +525,20 @@ body {
         height: 80vh;
     }
     .welcome-right img {
-        height: 400px;
         width: 400px;
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
     .welcome-left h1 {
         font-size: 75px;
     }
     .welcome-right img {
-        height: 350px;
         width: 350px;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
     .navbar-menu a {
         font-size: 18px;
         gap: 20px;
@@ -549,15 +550,29 @@ body {
         font-size: 20px;
     }
     .welcome-right img {
-        height: 320px;
         width: 320px;
     }
     .welcome {
         height: 70vh;
     }
+    .Second-page {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+    }
+    .second-left, .second-right {
+        max-width: 50%;
+    }
+    .second-left img {
+        width: 100%;
+    }
+    .second-right {
+        margin-left: 20px;
+    }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
     .welcome-left {
         margin-left: 50px;
         max-width: 100%;
@@ -569,7 +584,6 @@ body {
         font-size: 18px;
     }
     .welcome-right img {
-        height: 280px;
         width: 280px;
         margin-left: 70px;
     }
@@ -578,7 +592,7 @@ body {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
     .navbar-logo img {
         height: 60px;
     }
@@ -593,15 +607,32 @@ body {
         font-size: 16px;
     }
     .welcome-right img {
-        height: 240px;
         width: 240px;
     }
     .welcome {
         height: 60vh;
     }
+    .Second-page {
+        flex-direction: column;
+        text-align: center;
+    }
+    .second-left, .second-right {
+        max-width: 100%;
+    }
+    .second-left img {
+        width: 90%;
+        margin: auto;
+    }
+    .second-right {
+        margin-top: 20px;
+    }
+    .navbar-signup {
+        padding: 7px 18px;
+        font-size: 14px;
+    }
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
     .navbar-logo {
         display: none;
     }
@@ -628,122 +659,26 @@ body {
     .welcome {
         height: 55vh;
     }
+    .navbar-signup {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .navbar-menu {
         gap: 10px;
     }
-    .welcome-left h1 {
-        font-size: 48px; /* Slightly larger */
-    }
-    .welcome p {
-        font-size: 16px; /* Slightly larger */
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .navbar {
-        padding: 10px 20px;
-    }
-    .navbar-menu a {
-        font-size: 14px;
-        padding: 10px 15px;
-        gap: 8px;
-    }
-    .welcome-left h1 {
-        font-size: 42px; /* Slightly larger */
-    }
-    .welcome p {
-        font-size: 15px; /* Slightly larger */
-    }
-    .welcome {
-        height: 50vh;
-    }
-    .wwelcome-button, .login-button {
-        font-size: 14px; /* Slightly larger */
-        padding: 8px 12px; /* Slightly larger */
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .navbar {
-        padding: 5px 10px;
-        height: 45px;
-    }
-    .navbar-menu a {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-    .welcome-left h1 {
-        font-size: 36px; /* Slightly larger */
-    }
-    .welcome p {
-        font-size: 14px; /* Slightly larger */
-    }
-    .wwelcome-button, .login-button {
+    .navbar-signup {
+        padding: 5px 14px;
         font-size: 12px;
-        padding: 6px 10px; /* Slightly larger */
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .navbar {
-        padding: 2px 5px;
-        height: 40px;
-    }
-    .navbar-menu a {
-        font-size: 12px;
-        padding: 6px 8px;
     }
     .welcome-left h1 {
-        font-size: 32px; /* Slightly larger */
+        font-size: 48px;
     }
     .welcome p {
-        font-size: 13px; /* Slightly larger */
+        font-size: 16px;
     }
-    .wwelcome-button, .login-button {
-        font-size: 11px;
-        padding: 5px 8px; /* Slightly larger */
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .Second-page {
-        display: flex;
-        flex-direction: row;
-        height: auto;
-        align-items: center;
-    }
-    .second-left, .second-right {
-        max-width: 50%;
-    }
-    .second-left img {
-        width: 100%;
-    }
-    .second-right {
-        margin-left: 20px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .Second-page {
-        flex-direction: column;
-        text-align: center;
-    }
-    .second-left, .second-right {
-        max-width: 100%;
-    }
-    .second-left img {
-        width: 90%;
-        margin: auto;
-    }
-    .second-right {
-        margin-top: 20px;
-    }
-}
-
-@media screen and (max-width: 600px) {
     .second-right h1 {
         font-size: 30px;
     }
@@ -755,57 +690,80 @@ body {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+    .navbar-menu a {
+        font-size: 14px;
+        padding: 10px 15px;
+        gap: 8px;
+    }
+    .navbar-signup {
+        padding: 5px 14px;
+        font-size: 11px;
+    }
+    .welcome-left h1 {
+        font-size: 42px;
+    }
+    .welcome p {
+        font-size: 15px;
+    }
+    .welcome {
+        height: 50vh;
+    }
     .second-right h1 {
         font-size: 28px;
     }
     .second-right p {
         font-size: 16px;
     }
-    .second-left img {
-        width: 100%;
-    }
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 400px) {
+    .navbar {
+        padding: 5px 10px;
+        height: 45px;
+    }
+    .navbar-menu a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
     .navbar-signup {
-        padding: 5px 30px; /* Increase width */
-        font-size: 14px; /* Slightly smaller font size */
+        padding: 4px 12px;
+        font-size: 10px;
+    }
+    .welcome-left h1 {
+        font-size: 36px;
+    }
+    .welcome p {
+        font-size: 14px;
+    }
+    .welcome {
+        height: 45vh;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 300px) {
+    .navbar {
+        padding: 2px 5px;
+        height: 40px;
+    }
+    .navbar-menu a {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
     .navbar-signup {
-        padding: 4px 28px; /* Increase width */
-        font-size: 13px; /* Slightly smaller font size */
+        padding: 3px 10px;
+        font-size: 9px;
+    }
+    .welcome-left h1 {
+        font-size: 32px;
+    }
+    .welcome p {
+        font-size: 13px;
+    }
+    .welcome {
+        height: 40vh;
     }
 }
-
-@media screen and (max-width: 600px) {
-    .navbar-signup {
-        padding: 3px 26px; /* Increase width */
-        font-size: 12px; /* Slightly smaller font size */
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .navbar-signup {
-        padding: 2px 24px; /* Increase width */
-        font-size: 11px; /* Slightly smaller font size */
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .navbar-signup {
-        padding: 1px 22px; /* Increase width */
-        font-size: 10px; /* Slightly smaller font size */
-    }
-}
-
-@media screen and (max-width: 300px) {
-    .navbar-signup {
-        padding: 1px 20px; /* Increase width */
-        font-size: 9px; /* Slightly smaller font size */
-    }
-}
-
