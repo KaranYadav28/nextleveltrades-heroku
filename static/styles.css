@@ -511,7 +511,7 @@ body {
     font-size: 14px;
     color: #bdbdbd;
 }
-/* Full Updated Responsive Code */
+/* Full Updated Responsiveness Code */
 
 /* Resetting margin and padding for all elements */
 * {
@@ -534,36 +534,6 @@ body {
     font-family: Georgia, serif;
 }
 
-/* Navbar styling */
-.navbar {
-    display: flex;
-    justify-content: flex-end; /* Pushes navbar content to the right */
-    align-items: center;
-    padding: 15px 30px;
-}
-
-.navbar-menu a {
-    font-size: 14px;
-    padding: 10px 20px;
-    gap: 10px;
-}
-
-/* Signup button styling */
-.navbar-signup {
-    padding: 5px 25px; /* Decrease height, increase width */
-    font-size: 12px;
-    margin-left: 15px;
-    background-color: #ff009d;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-signup:hover {
-    background-color: #e60088;
-}
-
 /* Responsive layout adjustments */
 
 /* For screens up to 1200px */
@@ -579,6 +549,17 @@ body {
     }
     .welcome-right img {
         width: 400px;
+        height: auto;
+    }
+}
+
+/* For screens up to 1100px */
+@media (max-width: 1100px) {
+    .welcome-left h1 {
+        font-size: 75px;
+    }
+    .welcome-right img {
+        width: 350px;
         height: auto;
     }
 }
@@ -624,7 +605,7 @@ body {
 /* For screens up to 900px */
 @media (max-width: 900px) {
     .welcome-left {
-        margin-left: 30px; /* Shift towards left from center */
+        margin-left: 50px;
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -639,9 +620,6 @@ body {
     }
     .welcome {
         height: 65vh;
-        display: flex;
-        justify-content: flex-start; /* Align content to the left */
-        align-items: center;
     }
 }
 
@@ -649,6 +627,9 @@ body {
 @media (max-width: 800px) {
     .navbar-logo img {
         height: 60px;
+    }
+    .navbar-menu {
+        justify-content: flex-end; /* Push navbar towards the right */
     }
     .navbar-menu a {
         font-size: 16px;
@@ -666,12 +647,12 @@ body {
     }
     .welcome {
         height: 60vh;
-        margin-left: 15px; /* Further shifting welcome section */
     }
     .Second-page {
         flex-direction: column;
         text-align: center;
         width: 100%;
+        height: 120vh; /* Increase height of second page */
     }
     .second-left, .second-right {
         max-width: 100%;
@@ -682,9 +663,11 @@ body {
     }
     .second-right {
         margin-top: 20px;
+        padding: 0 20px;
     }
     .navbar-signup {
-        padding: 7px 25px; /* Increase button width, decrease height */
+        padding: 5px 30px; /* Increase width */
+        height: 35px; /* Decrease height */
         font-size: 14px;
     }
 }
@@ -694,12 +677,15 @@ body {
     .navbar-logo {
         display: none;
     }
+    .navbar-menu {
+        justify-content: flex-end; /* Ensure navbar is right-aligned */
+    }
     .navbar-menu a {
         font-size: 14px;
         gap: 10px;
     }
     .welcome-left {
-        margin-left: 20px;
+        margin-left: 50px;
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -711,14 +697,18 @@ body {
     .welcome-right img {
         display: none;
     }
+    .navbar {
+        justify-content: center;
+    }
     .welcome {
         height: 55vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
-    .Second-page {
-        height: 100vh; /* Increase height of second page */
-    }
-    .second-right p {
-        margin-bottom: 20px; /* Add spacing between points in about section */
+    .navbar-signup {
+        padding: 6px 40px; /* Increase width and decrease height */
+        font-size: 13px;
     }
 }
 
@@ -728,11 +718,11 @@ body {
         gap: 10px;
     }
     .navbar-signup {
-        padding: 5px 25px; /* Decrease height, increase width */
+        padding: 6px 40px; /* Wider button */
         font-size: 12px;
     }
     .welcome-left {
-        margin-left: 20px;
+        margin-left: 30px; /* Shift slightly to the left from center */
         max-width: 100%;
         text-align: left;
     }
@@ -751,11 +741,30 @@ body {
         justify-content: flex-start;
         align-items: center;
     }
-    .Second-page {
-        height: 110vh; /* Further increase height */
+    /* Get in Touch Section for mobile */
+    .get-in-touch {
+        width: 100%; /* Full width on mobile */
+        margin: 0;
+        padding: 30px 20px;
     }
-    .second-right p {
-        margin-bottom: 25px; /* Add larger spacing between points */
+    .get-in-touch h2 {
+        font-size: 32px;
+    }
+    .get-in-touch p {
+        font-size: 14px;
+    }
+    .get-in-touch .contact-form {
+        width: 100%;
+        padding: 0;
+    }
+    .get-in-touch .contact-form input,
+    .get-in-touch .contact-form textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .get-in-touch .contact-form button {
+        font-size: 16px;
+        padding: 12px;
     }
 }
 
@@ -770,7 +779,7 @@ body {
         gap: 8px;
     }
     .navbar-signup {
-        padding: 5px 20px;
+        padding: 5px 50px; /* Wider button */
         font-size: 11px;
     }
     .welcome-left h1 {
@@ -783,10 +792,16 @@ body {
         height: 45vh;
     }
     .Second-page {
-        height: 120vh; /* Increase height of about section */
+        height: 130vh; /* Further increase height of second page */
     }
     .second-right p {
-        margin-bottom: 30px; /* Add larger spacing between points */
+        margin-bottom: 15px; /* Add spacing between points */
+    }
+    .get-in-touch h2 {
+        font-size: 28px;
+    }
+    .get-in-touch p {
+        font-size: 13px;
     }
 }
 
@@ -801,7 +816,7 @@ body {
         padding: 8px 10px;
     }
     .navbar-signup {
-        padding: 4px 12px;
+        padding: 4px 50px; /* Wider button */
         font-size: 10px;
     }
     .welcome-left h1 {
@@ -813,11 +828,15 @@ body {
     .welcome {
         height: 45vh;
     }
-    .Second-page {
-        height: 130vh; /* Final height adjustment for about section */
+    .get-in-touch h2 {
+        font-size: 24px;
     }
-    .second-right p {
-        margin-bottom: 35px; /* Add even more spacing between points */
+    .get-in-touch p {
+        font-size: 12px;
+    }
+    .get-in-touch .contact-form button {
+        font-size: 14px;
+        padding: 10px;
     }
 }
 
@@ -832,7 +851,7 @@ body {
         padding: 6px 8px;
     }
     .navbar-signup {
-        padding: 3px 10px;
+        padding: 3px 45px; /* Wider button */
         font-size: 9px;
     }
     .welcome-left h1 {
