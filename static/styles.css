@@ -511,8 +511,6 @@ body {
     font-size: 14px;
     color: #bdbdbd;
 }
-/* Full Responsive Code */
-
 /* Resetting margin and padding for all elements */
 * {
     margin: 0;
@@ -520,147 +518,270 @@ body {
     box-sizing: border-box;
 }
 
-/* Prevent horizontal scroll */
+/* Prevent horizontal scroll by hiding overflow */
 html, body {
     width: 100%;
     overflow-x: hidden;
 }
 
-/* Mobile-first approach */
+/* Ensure containers take full width */
+body {
+    background: linear-gradient(45deg, #471174, #180527, #2b103f, #0c0625, #0a051b);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease-in-out infinite;
+    font-family: Georgia, serif;
+}
 
-/* Navbar adjustments for mobile */
-@media (max-width: 600px) {
-    .navbar {
-        display: flex;
-        justify-content: flex-end; /* Push navbar buttons toward the right */
-        padding: 10px 20px;
+/* Responsive layout adjustments */
+
+/* For screens up to 1200px */
+@media (max-width: 1200px) {
+    .welcome-left h1 {
+        font-size: 80px;
     }
-
-    .navbar-menu {
-        display: flex;
-        gap: 10px;
-        margin-right: auto; /* Push the buttons towards the right */
+    .welcome p {
+        font-size: 22px;
     }
-
-    .navbar-menu a {
-        font-size: 14px;
-        padding: 10px 15px;
+    .welcome {
+        height: 80vh;
     }
-
-    .navbar-signup {
-        padding: 8px 22px; /* Increase width and decrease height */
-        font-size: 11px;
+    .welcome-right img {
+        width: 400px;
+        height: auto;
     }
 }
 
-/* Welcome section alignment fix */
-@media (max-width: 600px) {
-    .welcome-left {
-        max-width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        padding-left: 10px;  /* Slight left alignment */
-    }
-
+/* For screens up to 1100px */
+@media (max-width: 1100px) {
     .welcome-left h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
+        font-size: 75px;
     }
+    .welcome-right img {
+        width: 350px;
+        height: auto;
+    }
+}
 
+/* For screens up to 1000px */
+@media (max-width: 1000px) {
+    .navbar-menu a {
+        font-size: 18px;
+        gap: 20px;
+    }
+    .welcome-left h1 {
+        font-size: 70px;
+    }
+    .welcome p {
+        font-size: 20px;
+    }
+    .welcome-right img {
+        width: 320px;
+        height: auto;
+    }
+    .welcome {
+        height: 70vh;
+    }
+    .Second-page {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        width: 100%;
+    }
+    .second-left, .second-right {
+        max-width: 50%;
+    }
+    .second-left img {
+        width: 100%;
+        height: auto;
+    }
+    .second-right {
+        margin-left: 20px;
+    }
+}
+
+/* For screens up to 900px */
+@media (max-width: 900px) {
+    .welcome-left {
+        margin-left: 50px;
+        max-width: 100%;
+    }
+    .welcome-left h1 {
+        font-size: 60px;
+    }
+    .welcome p {
+        font-size: 18px;
+    }
+    .welcome-right img {
+        width: 280px;
+        margin-left: 70px;
+    }
+    .welcome {
+        height: 65vh;
+    }
+}
+
+/* For screens up to 800px */
+@media (max-width: 800px) {
+    .navbar-logo img {
+        height: 60px;
+    }
+    .navbar-menu a {
+        font-size: 16px;
+        gap: 15px;
+    }
+    .welcome-left h1 {
+        font-size: 55px;
+    }
     .welcome p {
         font-size: 16px;
-        margin-bottom: 30px;
     }
-
-    .wwelcome-button, .login-button {
-        margin: 0 auto;
-        display: block;
-        padding: 10px 20px;
+    .welcome-right img {
+        width: 240px;
+        height: auto;
+    }
+    .welcome {
+        height: 60vh;
+    }
+    .Second-page {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    .second-left, .second-right {
+        max-width: 100%;
+    }
+    .second-left img {
+        width: 90%;
+        margin: auto;
+    }
+    .second-right {
+        margin-top: 20px;
+    }
+    .navbar-signup {
+        padding: 7px 18px;
+        font-size: 14px;
     }
 }
 
-/* Get in Touch section responsive fix */
+/* For screens up to 700px */
+@media (max-width: 700px) {
+    .navbar-logo {
+        display: none;
+    }
+    .navbar-menu a {
+        font-size: 14px;
+        gap: 10px;
+    }
+    .welcome-left {
+        margin-left: 50px;
+        max-width: 100%;
+    }
+    .welcome-left h1 {
+        font-size: 50px;
+    }
+    .welcome p {
+        font-size: 16px;
+    }
+    .welcome-right img {
+        display: none;
+    }
+    .navbar {
+        justify-content: center;
+    }
+    .welcome {
+        height: 55vh;
+    }
+    .navbar-signup {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+}
+
+/* For screens up to 600px */
 @media (max-width: 600px) {
+    .navbar-menu {
+        gap: 10px;
+    }
+    .navbar-signup {
+        padding: 5px 14px;
+        font-size: 12px;
+    }
+    .welcome-left {
+        margin-left: 20px; /* Shift towards left from center */
+        max-width: 100%;
+        text-align: left;
+    }
+    .welcome-left h1 {
+        font-size: 48px;
+    }
+    .welcome p {
+        font-size: 16px;
+    }
+    .welcome-right img {
+        display: none;
+    }
+    .welcome {
+        height: 50vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    /* Get in Touch Section for mobile */
     .get-in-touch {
-        width: 100%; /* Full width for mobile */
-        padding: 20px;
-        border-radius: 0;
+        width: 100%; /* Full width on mobile */
         margin: 0;
+        padding: 30px 20px;
     }
-
     .get-in-touch h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
-
     .get-in-touch p {
         font-size: 14px;
-        margin-bottom: 30px;
     }
-
     .get-in-touch .contact-form {
         width: 100%;
-        padding: 10px;
+        padding: 0;
     }
-
     .get-in-touch .contact-form input,
     .get-in-touch .contact-form textarea {
-        width: 100%;
+        padding: 12px;
         font-size: 14px;
-        padding: 10px;
     }
-
     .get-in-touch .contact-form button {
         font-size: 16px;
         padding: 12px;
     }
 }
 
-/* Second-page (About section) - Adding spacing between points */
-@media (max-width: 600px) {
-    .Second-page {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;  /* Ensure full width */
-        padding: 20px;
-    }
-
-    .second-left, .second-right {
-        max-width: 100%;
-    }
-
-    .second-left img {
-        width: 90%;
-        margin: auto;
-    }
-
-    .second-right {
-        margin-top: 20px;
-        padding: 20px;
-    }
-
-    .second-right h1 {
-        font-size: 30px;
-        margin-bottom: 15px;
-    }
-
-    .second-right p {
-        font-size: 16px;
-        margin-bottom: 15px; /* Add spacing between points */
-    }
-}
-
-/* Welcome section height adjustments for mobile */
+/* For screens up to 500px */
 @media (max-width: 500px) {
-    .welcome {
-        height: 50vh;
+    .navbar {
+        padding: 10px 20px;
     }
-
+    .navbar-menu a {
+        font-size: 14px;
+        padding: 10px 15px;
+        gap: 8px;
+    }
+    .navbar-signup {
+        padding: 5px 14px;
+        font-size: 11px;
+    }
     .welcome-left h1 {
         font-size: 42px;
     }
-
     .welcome p {
         font-size: 15px;
+    }
+    .welcome {
+        height: 45vh;
+    }
+    .get-in-touch h2 {
+        font-size: 28px;
+    }
+    .get-in-touch p {
+        font-size: 13px;
     }
 }
 
@@ -670,27 +791,32 @@ html, body {
         padding: 5px 10px;
         height: 45px;
     }
-
     .navbar-menu a {
         font-size: 14px;
         padding: 8px 10px;
     }
-
     .navbar-signup {
-        padding: 6px 20px; /* Adjust height and width */
+        padding: 4px 12px;
         font-size: 10px;
     }
-
     .welcome-left h1 {
         font-size: 36px;
     }
-
     .welcome p {
         font-size: 14px;
     }
-
     .welcome {
         height: 45vh;
+    }
+    .get-in-touch h2 {
+        font-size: 24px;
+    }
+    .get-in-touch p {
+        font-size: 12px;
+    }
+    .get-in-touch .contact-form button {
+        font-size: 14px;
+        padding: 10px;
     }
 }
 
@@ -700,25 +826,20 @@ html, body {
         padding: 2px 5px;
         height: 40px;
     }
-
     .navbar-menu a {
         font-size: 12px;
         padding: 6px 8px;
     }
-
     .navbar-signup {
-        padding: 5px 18px; /* Adjust height and width */
+        padding: 3px 10px;
         font-size: 9px;
     }
-
     .welcome-left h1 {
         font-size: 32px;
     }
-
     .welcome p {
         font-size: 13px;
     }
-
     .welcome {
         height: 40vh;
     }
