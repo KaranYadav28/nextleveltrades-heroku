@@ -16,7 +16,10 @@
             </div>
             <div class="navbar-menu">
                 <a href="#" style="color: #ff009d;">Home</a>
-                <a href="#">Contact</a>
+                <a href="#About" style="color: #ff009d;" id="about-nav">About</a>
+
+                <a href="#contact">Contact</a>
+                
                 
                 <!-- Conditionally display buttons based on user status -->
                 {% if current_user.is_authenticated %}
@@ -103,7 +106,7 @@
         </div>
     </section>
 
-    <section class="get-in-touch">
+    <section class="get-in-touch" id="contact">
         <h2>Let's get in touch today!</h2>
         <p>Any issue, Let us know.</p>
         <div class="contact-form">
