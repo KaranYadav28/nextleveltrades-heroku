@@ -536,7 +536,9 @@ body {
     font-family: Georgia, serif;
 }
 
-/* Responsive layout adjustments */
+/* Full Responsiveness Code */
+
+/* Mobile-first approach */
 
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
@@ -590,7 +592,7 @@ body {
         flex-direction: row;
         height: auto;
         align-items: center;
-        width: 100%;  /* Ensure full width */
+        width: 100%;
     }
     .second-left, .second-right {
         max-width: 50%;
@@ -650,7 +652,7 @@ body {
     .Second-page {
         flex-direction: column;
         text-align: center;
-        width: 100%;  /* Ensure full width */
+        width: 100%;
     }
     .second-left, .second-right {
         max-width: 100%;
@@ -704,6 +706,30 @@ body {
 
 /* For screens up to 600px */
 @media (max-width: 600px) {
+    /* Welcome section alignment fix */
+    .welcome-left {
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding-left: 10px;  /* Slight left alignment */
+    }
+
+    .welcome-left h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .wwelcome-button, .login-button {
+        margin: 0 auto;
+        display: block;
+        padding: 10px 20px;
+    }
+
     .navbar-menu {
         gap: 10px;
     }
@@ -726,6 +752,40 @@ body {
     .second-left img {
         width: 100%;
         height: auto;
+    }
+
+    /* Get in Touch section responsive fix */
+    .get-in-touch {
+        width: 100%; /* Full width for mobile */
+        padding: 20px;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .get-in-touch h2 {
+        font-size: 28px;
+    }
+
+    .get-in-touch p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .get-in-touch .contact-form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .get-in-touch .contact-form input,
+    .get-in-touch .contact-form textarea {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .get-in-touch .contact-form button {
+        font-size: 16px;
+        padding: 12px;
     }
 }
 
@@ -807,11 +867,5 @@ body {
     }
     .welcome {
         height: 40vh;
-    }
-}
-
-    .welcome {
-        height: 40vh;
-        padding-left: 5%; /* Slight left alignment */
     }
 }
