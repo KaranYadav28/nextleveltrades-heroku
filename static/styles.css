@@ -531,18 +531,20 @@ body {
     font-family: Georgia, serif;
 }
 
-/* Aligning welcome section content to the left using flexbox */
+/* Aligning welcome section content vertically and to the left using flexbox */
 .welcome-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligning content to the left */
+    align-items: flex-start; /* Align content to the left */
+    justify-content: center; /* Center vertically within the container */
+    gap: 15px; /* Add space between elements */
 }
 
 /* Adjust signup button dimensions */
 .navbar-signup {
     height: 30px; /* Reduced height */
-    width: 150px; /* Increased width */
-    padding: 5px 20px;
+    width: 100px; /* Reasonable width */
+    padding: 5px 15px;
     font-size: 14px;
 }
 
@@ -672,8 +674,8 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 150px;
-        padding: 5px 20px;
+        width: 100px;
+        padding: 5px 15px;
         font-size: 14px;
     }
 }
@@ -693,6 +695,8 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
+        gap: 15px;
     }
     .welcome-left h1 {
         font-size: 50px;
@@ -711,8 +715,8 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 150px;
-        padding: 5px 16px;
+        width: 100px;
+        padding: 5px 15px;
         font-size: 13px;
     }
 }
@@ -728,7 +732,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 150px;
+        width: 100px;
         padding: 5px 14px;
         font-size: 12px;
     }
@@ -762,7 +766,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 150px;
+        width: 100px;
         padding: 5px 14px;
         font-size: 11px;
     }
@@ -795,7 +799,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 150px;
+        width: 100px;
         padding: 4px 12px;
         font-size: 10px;
     }
@@ -822,7 +826,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 150px;
+        width: 100px;
         padding: 3px 10px;
         font-size: 9px;
     }
