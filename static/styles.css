@@ -517,12 +517,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Prevent horizontal scroll by hiding overflow */
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
 /* Ensure containers take full width */
 body {
     background: linear-gradient(45deg, #471174, #180527, #2b103f, #0c0625, #0a051b);
@@ -531,19 +525,31 @@ body {
     font-family: Georgia, serif;
 }
 
-/* Aligning welcome section content vertically and to the left using flexbox */
+/* Navbar with translucent and blur effect */
+.navbar {
+    background: rgba(255, 255, 255, 0.1); /* Translucent background */
+    backdrop-filter: blur(10px); /* Blurred effect */
+    padding: 10px 20px;
+}
+
+/* Aligning welcome section content to the left with flexbox */
 .welcome-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align content to the left */
-    justify-content: center; /* Center vertically within the container */
-    gap: 15px; /* Add space between elements */
+    gap: 10px;
+}
+
+/* Align buttons and other content horizontally */
+.welcome-buttons {
+    display: flex;
+    gap: 15px; /* Spacing between buttons */
 }
 
 /* Adjust signup button dimensions */
 .navbar-signup {
     height: 30px; /* Reduced height */
-    width: 100px; /* Reasonable width */
+    width: 110px; /* Reduced width */
     padding: 5px 15px;
     font-size: 14px;
 }
@@ -674,7 +680,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 100px;
+        width: 110px;
         padding: 5px 15px;
         font-size: 14px;
     }
@@ -695,7 +701,9 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+    }
+    .welcome-buttons {
+        display: flex;
         gap: 15px;
     }
     .welcome-left h1 {
@@ -715,8 +723,8 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 100px;
-        padding: 5px 15px;
+        width: 110px;
+        padding: 5px 16px;
         font-size: 13px;
     }
 }
@@ -732,7 +740,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 100px;
+        width: 110px;
         padding: 5px 14px;
         font-size: 12px;
     }
@@ -766,7 +774,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 100px;
+        width: 110px;
         padding: 5px 14px;
         font-size: 11px;
     }
@@ -799,7 +807,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 100px;
+        width: 110px;
         padding: 4px 12px;
         font-size: 10px;
     }
@@ -826,7 +834,7 @@ body {
     }
     .navbar-signup {
         height: 30px;
-        width: 100px;
+        width: 110px;
         padding: 3px 10px;
         font-size: 9px;
     }
