@@ -21,8 +21,8 @@ class TradingBot:
         self.indicator = indicator
         self.exchange = exchange.lower()
         self.trade_states = {asset: {"trade_started": False, "position_type": None, "entry_price": None} for asset in self.assets}
-        self.stop_loss_percentage = 0.06
-        self.take_profit_percentage = 0.06
+        self.stop_loss_percentage = 0.04
+        self.take_profit_percentage = 0.04
         self.trade_started = True
         self.ccxt_exchange = self._initialize_exchange()
 
