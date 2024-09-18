@@ -511,13 +511,6 @@ body {
     font-size: 14px;
     color: #bdbdbd;
 }
-/* Full Updated Responsiveness Code */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Prevent horizontal scroll by hiding overflow */
 html, body {
     width: 100%;
@@ -531,8 +524,6 @@ body {
     animation: gradientShift 10s ease-in-out infinite;
     font-family: Georgia, serif;
 }
-
-/* Responsive layout adjustments */
 
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
@@ -586,7 +577,7 @@ body {
         flex-direction: row;
         height: auto;
         align-items: center;
-        width: 100%;  /* Ensure full width */
+        width: 100%;
     }
     .second-left, .second-right {
         max-width: 50%;
@@ -646,7 +637,7 @@ body {
     .Second-page {
         flex-direction: column;
         text-align: center;
-        width: 100%;  /* Ensure full width */
+        width: 100%;
     }
     .second-left, .second-right {
         max-width: 100%;
@@ -700,6 +691,10 @@ body {
 
 /* For screens up to 600px */
 @media (max-width: 600px) {
+    /* Hiding the "about-nav" button for smaller screens */
+    #about-nav {
+        display: none;
+    }
     .navbar-menu {
         gap: 10px;
     }
@@ -800,15 +795,6 @@ body {
     }
     .welcome p {
         font-size: 13px;
-    }
-    .welcome {
-        height: 40vh;
-    }
-}
-
-
-
-
     }
     .welcome {
         height: 40vh;
