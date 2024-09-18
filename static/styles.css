@@ -525,6 +525,19 @@ body {
     font-family: Georgia, serif;
 }
 
+/* Aligning welcome section content to the left */
+.welcome-left {
+    text-align: left;
+}
+
+/* Adjust signup button dimensions */
+.navbar-signup {
+    height: 35px; /* Smaller height */
+    width: 120px; /* Bigger width */
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
     .welcome-left h1 {
@@ -650,7 +663,9 @@ body {
         margin-top: 20px;
     }
     .navbar-signup {
-        padding: 5px 30px; /* Small height, bigger width */
+        height: 35px;
+        width: 120px;
+        padding: 8px 20px;
         font-size: 14px;
     }
 }
@@ -667,6 +682,7 @@ body {
     .welcome-left {
         margin-left: 50px;
         max-width: 100%;
+        text-align: left;
     }
     .welcome-left h1 {
         font-size: 50px;
@@ -684,7 +700,9 @@ body {
         height: 55vh;
     }
     .navbar-signup {
-        padding: 5px 28px; /* Adjusted padding for smaller height and larger width */
+        height: 35px;
+        width: 120px;
+        padding: 6px 16px;
         font-size: 13px;
     }
 }
@@ -699,7 +717,9 @@ body {
         gap: 10px;
     }
     .navbar-signup {
-        padding: 4px 24px; /* Smaller height, bigger width */
+        height: 35px;
+        width: 120px;
+        padding: 5px 14px;
         font-size: 12px;
     }
     .welcome-left h1 {
@@ -731,7 +751,9 @@ body {
         gap: 8px;
     }
     .navbar-signup {
-        padding: 3px 22px; /* Smaller height, bigger width */
+        height: 35px;
+        width: 120px;
+        padding: 5px 14px;
         font-size: 11px;
     }
     .welcome-left h1 {
@@ -762,7 +784,9 @@ body {
         padding: 8px 10px;
     }
     .navbar-signup {
-        padding: 3px 20px; /* Smaller height, bigger width */
+        height: 35px;
+        width: 120px;
+        padding: 4px 12px;
         font-size: 10px;
     }
     .welcome-left h1 {
@@ -787,7 +811,9 @@ body {
         padding: 6px 8px;
     }
     .navbar-signup {
-        padding: 2px 18px; /* Small height, bigger width */
+        height: 35px;
+        width: 120px;
+        padding: 3px 10px;
         font-size: 9px;
     }
     .welcome-left h1 {
