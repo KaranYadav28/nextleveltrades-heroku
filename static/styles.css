@@ -517,6 +517,12 @@ html, body {
     overflow-x: hidden;
 }
 
+/* Prevent horizontal scroll by hiding overflow */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* Ensure containers take full width */
 body {
     background: linear-gradient(45deg, #471174, #180527, #2b103f, #0c0625, #0a051b);
@@ -525,16 +531,18 @@ body {
     font-family: Georgia, serif;
 }
 
-/* Aligning welcome section content to the left */
+/* Aligning welcome section content to the left using flexbox */
 .welcome-left {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligning content to the left */
 }
 
 /* Adjust signup button dimensions */
 .navbar-signup {
-    height: 35px; /* Smaller height */
-    width: 120px; /* Bigger width */
-    padding: 8px 20px;
+    height: 30px; /* Reduced height */
+    width: 150px; /* Increased width */
+    padding: 5px 20px;
     font-size: 14px;
 }
 
@@ -663,9 +671,9 @@ body {
         margin-top: 20px;
     }
     .navbar-signup {
-        height: 35px;
-        width: 120px;
-        padding: 8px 20px;
+        height: 30px;
+        width: 150px;
+        padding: 5px 20px;
         font-size: 14px;
     }
 }
@@ -682,7 +690,9 @@ body {
     .welcome-left {
         margin-left: 50px;
         max-width: 100%;
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .welcome-left h1 {
         font-size: 50px;
@@ -700,9 +710,9 @@ body {
         height: 55vh;
     }
     .navbar-signup {
-        height: 35px;
-        width: 120px;
-        padding: 6px 16px;
+        height: 30px;
+        width: 150px;
+        padding: 5px 16px;
         font-size: 13px;
     }
 }
@@ -717,8 +727,8 @@ body {
         gap: 10px;
     }
     .navbar-signup {
-        height: 35px;
-        width: 120px;
+        height: 30px;
+        width: 150px;
         padding: 5px 14px;
         font-size: 12px;
     }
@@ -751,8 +761,8 @@ body {
         gap: 8px;
     }
     .navbar-signup {
-        height: 35px;
-        width: 120px;
+        height: 30px;
+        width: 150px;
         padding: 5px 14px;
         font-size: 11px;
     }
@@ -784,8 +794,8 @@ body {
         padding: 8px 10px;
     }
     .navbar-signup {
-        height: 35px;
-        width: 120px;
+        height: 30px;
+        width: 150px;
         padding: 4px 12px;
         font-size: 10px;
     }
@@ -811,8 +821,8 @@ body {
         padding: 6px 8px;
     }
     .navbar-signup {
-        height: 35px;
-        width: 120px;
+        height: 30px;
+        width: 150px;
         padding: 3px 10px;
         font-size: 9px;
     }
