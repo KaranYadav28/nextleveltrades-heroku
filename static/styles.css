@@ -684,13 +684,14 @@ body {
         height: 55vh;
     }
     .navbar-signup {
-        padding: 4px 28px; /* Small height, bigger width */
+        padding: 5px 28px; /* Adjusted padding for smaller height and larger width */
         font-size: 13px;
     }
 }
 
 /* For screens up to 600px */
 @media (max-width: 600px) {
+    /* Hiding the "about-nav" button for smaller screens */
     #about-nav {
         display: none;
     }
@@ -698,7 +699,7 @@ body {
         gap: 10px;
     }
     .navbar-signup {
-        padding: 3px 26px; /* Small height, bigger width */
+        padding: 4px 24px; /* Smaller height, bigger width */
         font-size: 12px;
     }
     .welcome-left h1 {
@@ -730,7 +731,7 @@ body {
         gap: 8px;
     }
     .navbar-signup {
-        padding: 3px 24px; /* Small height, bigger width */
+        padding: 3px 22px; /* Smaller height, bigger width */
         font-size: 11px;
     }
     .welcome-left h1 {
@@ -761,7 +762,7 @@ body {
         padding: 8px 10px;
     }
     .navbar-signup {
-        padding: 2px 22px; /* Small height, bigger width */
+        padding: 3px 20px; /* Smaller height, bigger width */
         font-size: 10px;
     }
     .welcome-left h1 {
@@ -786,7 +787,7 @@ body {
         padding: 6px 8px;
     }
     .navbar-signup {
-        padding: 2px 20px; /* Small height, bigger width */
+        padding: 2px 18px; /* Small height, bigger width */
         font-size: 9px;
     }
     .welcome-left h1 {
