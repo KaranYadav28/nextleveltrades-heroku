@@ -537,6 +537,21 @@ body {
     text-align: left;
 }
 
+/* Style for the navbar */
+.navbar {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Align items vertically */
+    padding: 10px 20px;
+}
+
+/* Adjust the navbar menu to flex */
+.navbar-menu {
+    display: flex; /* Display navbar items in a row */
+    gap: 15px; /* Space between buttons */
+    flex-grow: 1; /* Push buttons to the left */
+}
+
 /* Adjust the signup button */
 .navbar-signup {
     padding: 8px 20px; /* Default width */
@@ -699,7 +714,7 @@ body {
         display: none;
     }
     .navbar {
-        justify-content: center;
+        justify-content: space-between; /* Align content properly */
     }
     .welcome {
         height: 55vh;
@@ -713,14 +728,15 @@ body {
 /* For screens up to 600px */
 @media (max-width: 600px) {
     .navbar-menu {
+        display: flex;
         gap: 10px;
+        flex-grow: 1; /* Push navbar buttons to the left */
     }
     .navbar-signup {
         padding: 6px 30px; /* Increased width */
         height: 35px; /* Reduced height */
         font-size: 12px;
-        position: absolute; /* Align to the right */
-        right: 10px; /* Right edge positioning */
+        margin-left: auto; /* Keep it on the right side */
     }
     .welcome-left h1 {
         font-size: 48px;
