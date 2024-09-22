@@ -517,6 +517,12 @@ html, body {
     overflow-x: hidden;
 }
 
+/* Prevent horizontal scroll by hiding overflow */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* Ensure containers take full width */
 body {
     background: linear-gradient(45deg, #471174, #180527, #2b103f, #0c0625, #0a051b);
@@ -532,31 +538,51 @@ body {
     }
 }
 
-/* Align welcome section content to the left */
-.welcome-left {
-    text-align: left;
-}
-
-/* Style for the navbar */
+/* Navbar styles */
 .navbar {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Align items vertically */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
 }
 
-/* Adjust the navbar menu to flex */
+/* Navbar menu */
 .navbar-menu {
-    display: flex; /* Display navbar items in a row */
-    gap: 15px; /* Space between buttons */
-    flex-grow: 1; /* Push buttons to the left */
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
 }
 
-/* Adjust the signup button */
+/* Sign-up button */
 .navbar-signup {
-    padding: 8px 20px; /* Default width */
+    padding: 8px 20px;
     font-size: 14px;
-    height: auto; /* Make height flexible */
+    height: auto;
+}
+
+/* Welcome section alignment */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left */
+    padding-left: 20px; /* Adds some padding to the left */
+}
+
+/* Welcome section title and text alignment */
+.welcome-left {
+    text-align: left;
+    margin: 0; /* Remove any auto margins that center content */
+}
+
+/* About section alignment */
+.about-section {
+    text-align: left;
+    padding-left: 20px; /* Shift the content to the left */
+}
+
+/* Adjust button in the about section */
+.about-section .button {
+    margin-left: 0; /* Ensure button stays aligned to the left */
 }
 
 /* Responsive layout adjustments */
@@ -714,7 +740,7 @@ body {
         display: none;
     }
     .navbar {
-        justify-content: space-between; /* Align content properly */
+        justify-content: space-between;
     }
     .welcome {
         height: 55vh;
@@ -730,13 +756,13 @@ body {
     .navbar-menu {
         display: flex;
         gap: 10px;
-        flex-grow: 1; /* Push navbar buttons to the left */
+        flex-grow: 1;
     }
     .navbar-signup {
-        padding: 6px 30px; /* Increased width */
-        height: 35px; /* Reduced height */
+        padding: 6px 30px;
+        height: 35px;
         font-size: 12px;
-        margin-left: auto; /* Keep it on the right side */
+        margin-left: auto;
     }
     .welcome-left h1 {
         font-size: 48px;
