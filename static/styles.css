@@ -544,13 +544,6 @@ body {
     height: auto; /* Make height flexible */
 }
 
-@media (max-width: 600px) {
-    .navbar-signup {
-        padding: 6px 24px; /* Adjust width for mobile */
-        height: 40px; /* Reduce height */
-    }
-}
-
 /* Responsive layout adjustments */
 
 /* For screens up to 1200px */
@@ -723,8 +716,10 @@ body {
         gap: 10px;
     }
     .navbar-signup {
-        padding: 5px 14px;
-        font-size: 12px;
+        padding: 6px 26px; /* Increase width for mobile */
+        height: 35px; /* Reduce height */
+        position: absolute; /* Align to right */
+        right: 10px; /* Position to the right edge */
     }
     .welcome-left h1 {
         font-size: 48px;
