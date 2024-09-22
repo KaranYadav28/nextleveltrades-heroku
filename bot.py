@@ -65,7 +65,7 @@ class TradingBot:
 
     async def fetch_historical_prices(self, asset_name, limit):
         try:
-            ohlcv = self.ccxt_exchange.fetch_ohlcv(asset_name, timeframe='1h', limit=limit)
+            ohlcv = self.ccxt_exchange.fetch_ohlcv(asset_name, timeframe='15m', limit=limit)
             df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
             df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
             df.set_index('timestamp', inplace=True)
