@@ -152,7 +152,7 @@
     </div>
     <div class="navbar-menu">
         <a href="{{ url_for('home') }}">Home</a>
-        <a href="{{ url_for('home') }}">About</a>
+        <a href="{{ url_for('home') }}"id="about-nav">About</a>
         <a href="{{ url_for('home') }}">Contact</a>
         {% if current_user.is_authenticated %}
             {% if current_user.subscription_active %}
