@@ -63,16 +63,17 @@ class TradingBot:
             log_error(f"Error fetching ticker price for {asset_name}: {str(e)}")
             return None
 
-    async def fetch_historical_prices(self, asset_name, limit):
-        try:
-            ohlcv = self.ccxt_exchange.fetch_ohlcv(asset_name, timeframe='15m', limit=limit)
-            df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-            df.set_index('timestamp', inplace=True)
-            return df
-        except Exception as e:
-            log_error(f"Error fetching historical prices for {asset_name}: {str(e)}")
-            return pd.DataFrame()
+  async def fetch_historical_prices(self, asset_name, limit):
+    try:
+        # Fetch 15-minute historical OHLCV data
+        ohlcv = self.ccxt_exchange.fetch_ohlcv(asset_name, timeframe='15m', limit=limit)
+        df = pd.DataFrame(ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+        df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+        df.set_index('timestamp', inplace=True)
+        return df
+    except Exception as e:
+        log_error(f"Error fetching historical prices for {asset_name}: {str(e)}")
+        return pd.DataFrame()
 
     async def execute_position(self, asset_name, side):
         try:
