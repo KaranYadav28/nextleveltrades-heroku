@@ -535,7 +535,8 @@ body {
 /* Align welcome section content to the left */
 .welcome-left {
     text-align: left;
-    padding-left: 20px; /* Ensure consistent padding */
+    padding-left: 0; /* Ensure no padding */
+    margin: 0; /* Ensure no margin */
 }
 
 /* Adjust the signup button */
@@ -616,7 +617,8 @@ body {
 /* For screens up to 900px */
 @media (max-width: 900px) {
     .welcome-left {
-        margin-left: 20px; /* Keep content aligned left with smaller margin */
+        padding-left: 0; /* Remove padding */
+        margin-left: 0; /* Remove margin */
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -687,7 +689,8 @@ body {
         gap: 10px;
     }
     .welcome-left {
-        margin-left: 10px; /* Reduce left margin for smaller screens */
+        padding-left: 0; /* No padding */
+        margin-left: 0; /* No margin */
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -698,9 +701,6 @@ body {
     }
     .welcome-right img {
         display: none; /* Hide image on very small screens */
-    }
-    .navbar {
-        justify-content: center;
     }
     .welcome {
         height: 55vh;
@@ -765,7 +765,8 @@ body {
         font-size: 11px;
     }
     .welcome-left {
-        margin-left: 5px; /* Minimal margin for small devices */
+        padding-left: 0; /* Ensure no padding */
+        margin-left: 0; /* Remove margin */
     }
     .welcome-left h1 {
         font-size: 42px;
