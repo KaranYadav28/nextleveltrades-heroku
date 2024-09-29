@@ -535,6 +535,7 @@ body {
 /* Align welcome section content to the left */
 .welcome-left {
     text-align: left;
+    padding-left: 20px; /* Ensure consistent padding */
 }
 
 /* Adjust the signup button */
@@ -615,7 +616,7 @@ body {
 /* For screens up to 900px */
 @media (max-width: 900px) {
     .welcome-left {
-        margin-left: 50px;
+        margin-left: 20px; /* Keep content aligned left with smaller margin */
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -626,7 +627,7 @@ body {
     }
     .welcome-right img {
         width: 280px;
-        margin-left: 70px;
+        margin-left: 0; /* Remove unnecessary margin */
     }
     .welcome {
         height: 65vh;
@@ -686,7 +687,7 @@ body {
         gap: 10px;
     }
     .welcome-left {
-        margin-left: 50px;
+        margin-left: 10px; /* Reduce left margin for smaller screens */
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -696,7 +697,7 @@ body {
         font-size: 16px;
     }
     .welcome-right img {
-        display: none;
+        display: none; /* Hide image on very small screens */
     }
     .navbar {
         justify-content: center;
@@ -762,6 +763,9 @@ body {
     .navbar-signup {
         padding: 5px 14px;
         font-size: 11px;
+    }
+    .welcome-left {
+        margin-left: 5px; /* Minimal margin for small devices */
     }
     .welcome-left h1 {
         font-size: 42px;
