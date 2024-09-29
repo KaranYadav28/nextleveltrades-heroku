@@ -525,6 +525,28 @@ body {
     font-family: Georgia, serif;
 }
 
+/* Hide the navbar button with ID 'about-nav' on mobile screens */
+@media (max-width: 600px) {
+    #about-nav {
+        display: none;
+    }
+}
+
+/* Align welcome section content to the left */
+.welcome-left {
+    text-align: left;
+    margin-left: 0; /* Remove any potential centering margins */
+}
+
+/* Adjust the signup button */
+.navbar-signup {
+    padding: 8px 20px; /* Default width */
+    font-size: 14px;
+    height: auto; /* Make height flexible */
+}
+
+/* Responsive layout adjustments */
+
 /* For screens up to 1200px */
 @media (max-width: 1200px) {
     .welcome-left h1 {
@@ -594,8 +616,7 @@ body {
 /* For screens up to 900px */
 @media (max-width: 900px) {
     .welcome-left {
-        padding-left: 0;
-        margin-left: 0;
+        margin-left: 20px; /* Ensures left alignment without crowding */
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -606,7 +627,7 @@ body {
     }
     .welcome-right img {
         width: 280px;
-        margin-left: 0;
+        margin-left: 70px;
     }
     .welcome {
         height: 65vh;
@@ -621,6 +642,9 @@ body {
     .navbar-menu a {
         font-size: 16px;
         gap: 15px;
+    }
+    .welcome-left {
+        margin-left: 10px; /* Further adjustment to maintain alignment */
     }
     .welcome-left h1 {
         font-size: 55px;
@@ -666,8 +690,7 @@ body {
         gap: 10px;
     }
     .welcome-left {
-        padding-left: 0;
-        margin-left: 0;
+        margin-left: 10px;
         max-width: 100%;
     }
     .welcome-left h1 {
@@ -678,6 +701,9 @@ body {
     }
     .welcome-right img {
         display: none;
+    }
+    .navbar {
+        justify-content: center;
     }
     .welcome {
         height: 55vh;
@@ -708,6 +734,10 @@ body {
         font-size: 12px;
         margin-left: auto;
         position: relative;
+    }
+    .welcome-left {
+        margin-left: 0;
+        padding-left: 10px; /* Small padding to prevent flush alignment */
     }
     .welcome-left h1 {
         font-size: 48px;
@@ -740,10 +770,6 @@ body {
     .navbar-signup {
         padding: 5px 14px;
         font-size: 11px;
-    }
-    .welcome-left {
-        padding-left: 0;
-        margin-left: 0;
     }
     .welcome-left h1 {
         font-size: 42px;
@@ -810,4 +836,11 @@ body {
     .welcome {
         height: 40vh;
     }
+}
+
+/* Animation for the background gradient */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
