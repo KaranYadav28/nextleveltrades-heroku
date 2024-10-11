@@ -536,6 +536,10 @@ body {
 .welcome-left {
     text-align: left;
     margin-left: 0; /* Remove any potential centering margins */
+    display: flex; /* Use flex to ensure proper alignment */
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content to the top left */
+    padding-left: 20px; /* Adds padding to prevent the content from being flush against the edge */
 }
 
 /* Adjust the signup button */
