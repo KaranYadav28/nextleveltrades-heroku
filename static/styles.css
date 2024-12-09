@@ -9,6 +9,7 @@ body {
     color: white;
     font-family: Georgia, serif;
     animation: gradientShift 10s ease-in-out infinite;
+    overflow-x: hidden;
 }
 /* @keyframes gradientShift {
     100% { background-position: 0% 50%; }
